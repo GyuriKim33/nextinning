@@ -5,6 +5,10 @@ import App from './App'
 import './styles/variables.css'
 import './styles/global.css'
 
+if (/Windows/i.test(navigator.userAgent)) {
+  document.documentElement.classList.add('os-windows')
+}
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter>

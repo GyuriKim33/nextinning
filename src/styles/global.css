@@ -11,6 +11,11 @@ html {
   background: var(--color-white);
 }
 
+html.os-windows {
+  font-family: Pretendard, "Malgun Gothic", "Apple SD Gothic Neo", system-ui,
+    sans-serif;
+}
+
 body {
   min-width: 320px;
   min-height: 100vh;
