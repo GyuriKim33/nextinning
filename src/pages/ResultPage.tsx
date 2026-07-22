@@ -37,11 +37,10 @@ function ResultPage() {
           <div className="result-confetti" aria-hidden="true">
             <i /><i /><i /><i /><i /><i /><i /><i />
           </div>
-          <h1><strong>짜릿한 역전승!</strong></h1>
+          <h1>🎉 <strong>짜릿한 역전승!</strong> 🎉</h1>
           <p className="result-description">
             부산에서 수원까지 응원 와주셔서 감사합니다.<br />
-            이 기분, 야구장에서 끝내기엔 아쉽지 않나요?<br />
-            승리의 기운을 안고 수원의 다음 이닝을 시작해보세요!
+            이 기분, 야구장에서 끝내기엔 아쉽지 않나요?
           </p>
 
           <article className="victory-pass" aria-label="원정 커플의 주말 나들이 VICTORY PASS">
@@ -61,7 +60,6 @@ function ResultPage() {
               <div className="victory-pass__score" aria-label="KT 4 대 롯데 5">
                 <strong>4</strong><span>:</span><strong className="is-winner">5</strong>
               </div>
-              <div className="victory-pass__result-tags"><span>짜릿한 역전승!</span><span>한 점 차 승리!</span></div>
               <p>승리의 기운을 안고<br />수원의 <em>다음 이닝</em>을 시작해보세요!</p>
             </div>
           </article>

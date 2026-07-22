@@ -69,7 +69,7 @@
   display: none;
 }
 
-.app-brand { transform: translateY(-0.75rem); }
+.app-brand { transform: translateY(-1rem); }
 .app-brand > strong { font-size: 1.45rem; }
 .app-brand p { margin-top: 0.2rem; font-size: 0.68rem; line-height: 1.5; }
 .app-moon { top: 5.8rem; right: 3.2rem; width: 1.8rem; height: 1.8rem; }

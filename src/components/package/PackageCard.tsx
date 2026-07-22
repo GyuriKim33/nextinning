@@ -32,7 +32,7 @@ interface PackageCardProps {
 
 function PackageVisual({ type }: { type: PackageVisual }) {
   const content = {
-    goods: <><span>⚾</span><img className="package-baseball-bat" src={baseballBat} alt="" /><span>👕</span></>,
+    goods: <><span>⚾</span><img className="package-baseball-bat" src={baseballBat} alt="" /></>,
     meal: <><span>🍗</span><span>🍲</span></>,
     pottery: <><span className="package-pottery-copy">2026.07.24<br />LOTTE<br />FIGHTING!</span><span>🏺</span><span>🖌️</span></>,
     cafe: <><span>☕</span><span>🍰</span></>,
