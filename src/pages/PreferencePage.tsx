@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import ktWizLogo from '../assets/images/ktwiz.png'
+import lotteLogo from '../assets/images/lotte.png'
 import '../styles/preference.css'
 
 const questions = [
@@ -15,18 +17,18 @@ const questions = [
     title: '누구와 함께 왔나요?',
     description: '함께한 사람에 따라 코스가 달라져요.',
     options: [
-      { value: 'solo', label: '혼자', icon: '●', tone: 'solo' },
-      { value: 'couple', label: '연인', icon: '♥', tone: 'couple' },
-      { value: 'friends', label: '친구', icon: '●●●', tone: 'friends' },
-      { value: 'family', label: '가족', icon: '●●', tone: 'family' },
+      { value: 'solo', label: '혼자', icon: '🧍', tone: 'solo' },
+      { value: 'couple', label: '연인', icon: '💑', tone: 'couple' },
+      { value: 'friends', label: '친구', icon: '🧑‍🤝‍🧑', tone: 'friends' },
+      { value: 'family', label: '가족', icon: '👪', tone: 'family' },
     ],
   },
   {
     title: '수원에서 얼마나\n머물 수 있나요?',
     description: '머무는 시간에 맞춰 코스를 추천해드려요.',
     options: [
-      { value: '1h', label: '1시간', subLabel: '가볍게 즐기기', icon: '◷', tone: 'time' },
-      { value: '2-3h', label: '2~3시간', subLabel: '알차게 즐기기', icon: '◷', tone: 'time-blue' },
+      { value: '1h', label: '1시간', subLabel: '가볍게 즐기기', icon: '', tone: 'time' },
+      { value: '2-3h', label: '2~3시간', subLabel: '알차게 즐기기', icon: '', tone: 'time-blue' },
       { value: 'half-day', label: '반나절', subLabel: '여유롭게 즐기기', icon: '☀', tone: 'sun' },
       { value: 'overnight', label: '1박', subLabel: '하루를 온전히 즐기기', icon: '☾', tone: 'night' },
     ],
@@ -97,7 +99,7 @@ function PreferencePage() {
                   onClick={() => selectOption(option.value)}
                 >
                   <span className={`option-visual option-visual--${option.tone}`} aria-hidden="true">
-                    {option.icon}
+                    {option.value === 'kt' ? <img src={ktWizLogo} alt="" /> : option.value === 'lotte' ? <img src={lotteLogo} alt="" /> : option.icon}
                   </span>
                   <strong>{option.label}</strong>
                   {'subLabel' in option && <small>{option.subLabel}</small>}

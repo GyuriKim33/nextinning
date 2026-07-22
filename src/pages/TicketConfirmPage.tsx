@@ -1,10 +1,11 @@
 import { useNavigate } from 'react-router-dom'
+import ktWizLogo from '../assets/images/ktwiz.png'
+import lotteLogo from '../assets/images/lotte.png'
 import '../styles/ticket-confirm.css'
 
 const ticketDetails = [
   { label: '경기 날짜', value: '2026.07.24', icon: 'calendar' },
-  { label: '경기 시간', value: '18:30', icon: 'clock' },
-  { label: '경기장', value: '수원 KT위즈파크', icon: 'pin' },
+  { label: '경기 시작 시간', value: '18:30', icon: 'clock' },
   { label: '홈팀', value: 'KT WIZ', icon: 'home' },
   { label: '원정팀', value: 'LOTTE GIANTS', icon: 'away' },
 ] as const
@@ -37,13 +38,11 @@ function TicketConfirmPage() {
 
             <div className="game-matchup">
               <div className="confirm-team confirm-team--home">
-                <span>KT</span>
-                <strong>WIZ</strong>
+                <img src={ktWizLogo} alt="KT WIZ" />
               </div>
               <div className="confirm-versus"><span>VS</span></div>
               <div className="confirm-team confirm-team--away">
-                <span>LOTTE</span>
-                <strong>GIANTS</strong>
+                <img src={lotteLogo} alt="LOTTE GIANTS" />
               </div>
             </div>
 

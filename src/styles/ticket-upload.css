@@ -446,3 +446,59 @@
     transition: none;
   }
 }
+
+/* Compact viewport layout */
+.ticket-upload-shell { min-height: 100dvh; }
+
+.ticket-upload-page {
+  height: 100dvh;
+  min-height: 100dvh;
+  max-height: 100dvh;
+  padding: 0 1.5rem 1rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.ticket-upload-header { min-height: 4rem; }
+.ticket-upload-content { min-height: 0; padding-top: 0.45rem; }
+.ticket-upload-intro { margin-bottom: 1rem; font-size: clamp(1.15rem, 5vw, 1.35rem); line-height: 1.4; }
+
+.upload-card {
+  min-height: 20rem;
+  padding: 1.65rem 1rem 1.35rem;
+}
+
+.ticket-camera-visual { width: 9.5rem; height: 6.8rem; margin-bottom: 0.55rem; }
+.ticket-camera-visual::before { width: 6.7rem; height: 6.7rem; }
+.ticket-shape { width: 8.6rem; height: 4.5rem; }
+.ticket-fold { left: 1.75rem; }
+.upload-card > p { margin: 0.35rem 0 0.85rem; }
+.photo-select-button { min-height: 3rem; }
+.upload-divider { margin: 0.8rem 0; }
+.manual-entry-button { min-height: 3.45rem; }
+.ticket-next-button { flex: 0 0 auto; min-height: 3.4rem; margin-top: 0.9rem; }
+
+@media (min-width: 600px) {
+  .ticket-upload-shell { padding-block: 1rem; }
+  .ticket-upload-page {
+    height: calc(100dvh - 2rem);
+    min-height: 0;
+    max-height: calc(100dvh - 2rem);
+  }
+}
+
+@media (max-height: 760px) {
+  .ticket-upload-page { padding-bottom: 0.65rem; }
+  .ticket-upload-header { min-height: 3.5rem; }
+  .ticket-upload-content { padding-top: 0.2rem; }
+  .ticket-upload-intro { margin-bottom: 0.65rem; font-size: 1.08rem; line-height: 1.3; }
+  .upload-card { min-height: 17.5rem; padding-block: 1rem; }
+  .ticket-camera-visual { width: 8.5rem; height: 5.6rem; margin-bottom: 0.3rem; }
+  .ticket-camera-visual::before { width: 5.6rem; height: 5.6rem; }
+  .ticket-shape { width: 7.6rem; height: 4rem; }
+  .upload-card h2 { font-size: 1.05rem; }
+  .upload-card > p { margin: 0.25rem 0 0.55rem; font-size: 0.8rem; }
+  .upload-divider { margin: 0.55rem 0; }
+  .manual-entry-button { min-height: 3.15rem; }
+  .ticket-next-button { min-height: 3.15rem; margin-top: 0.65rem; }
+}

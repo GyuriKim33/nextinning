@@ -243,7 +243,25 @@
 }
 
 .detail-symbol::before { font-size: 0.82rem; font-weight: 800; }
-.detail-symbol--calendar::before { content: '▦'; }
+.detail-symbol--calendar::before {
+  position: absolute;
+  inset: 0.3rem 0.25rem 0.22rem;
+  content: '';
+  border: 1.5px solid currentColor;
+  border-radius: 0.18rem;
+  background: linear-gradient(currentColor 0 0) 0 0.28rem / 100% 1.5px no-repeat;
+}
+.detail-symbol--calendar::after {
+  position: absolute;
+  top: 0.2rem;
+  left: 0.48rem;
+  width: 0.12rem;
+  height: 0.36rem;
+  content: '';
+  border-radius: 999px;
+  background: currentColor;
+  box-shadow: 0.42rem 0 currentColor;
+}
 .detail-symbol--clock::before { content: '◷'; }
 .detail-symbol--pin::before { content: '●'; font-size: 0.55rem; }
 .detail-symbol--home::before { content: 'H'; }
@@ -281,4 +299,72 @@
     border-radius: 1.75rem;
     box-shadow: 0 24px 65px rgba(11, 42, 85, 0.13);
   }
+}
+
+/* Compact viewport layout */
+.confirm-shell { min-height: 100dvh; }
+
+.confirm-page {
+  height: 100dvh;
+  min-height: 100dvh;
+  max-height: 100dvh;
+  padding: 0 1.5rem 1rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.confirm-header { min-height: 4rem; }
+.confirm-content { min-height: 0; padding-top: 0.35rem; }
+.confirm-check { width: 2.35rem; height: 2.35rem; margin-bottom: 0.6rem; font-size: 1.05rem; }
+.confirm-heading h1 { font-size: clamp(1.3rem, 5.7vw, 1.55rem); }
+.confirm-heading p { margin: 0.45rem 0 1rem; font-size: 0.84rem; }
+.game-ticket-card { padding: 1rem; }
+.game-matchup { gap: 1rem; padding: 1rem 0.75rem 0.9rem; }
+.confirm-team { width: 4.25rem; }
+.confirm-versus { width: 2.3rem; height: 2.3rem; }
+.game-ticket-divider { margin-inline: -1rem; }
+.ticket-detail-list { padding-top: 0.35rem; }
+.ticket-detail-list > div { min-height: 3.45rem; }
+
+.confirm-team {
+  border: 0;
+  outline: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.confirm-team img {
+  display: block;
+  width: 8.2rem;
+  max-width: none;
+  height: auto;
+  object-fit: contain;
+}
+.detail-symbol { width: 1.4rem; height: 1.4rem; }
+.confirm-next-button { flex: 0 0 auto; min-height: 3.4rem; margin-top: 0.9rem; }
+
+@media (min-width: 600px) {
+  .confirm-shell { padding-block: 1rem; }
+  .confirm-page {
+    height: calc(100dvh - 2rem);
+    min-height: 0;
+    max-height: calc(100dvh - 2rem);
+  }
+}
+
+@media (max-height: 760px) {
+  .confirm-page { padding-bottom: 0.65rem; }
+  .confirm-header { min-height: 3.5rem; }
+  .confirm-content { padding-top: 0.15rem; }
+  .confirm-check { width: 2.1rem; height: 2.1rem; margin-bottom: 0.4rem; }
+  .confirm-heading h1 { font-size: 1.2rem; }
+  .confirm-heading p { margin: 0.35rem 0 0.7rem; font-size: 0.78rem; }
+  .game-ticket-card { padding: 0.8rem; }
+  .game-matchup { padding-block: 0.7rem; }
+  .confirm-team { width: 3.7rem; }
+  .game-ticket-divider { margin-inline: -0.8rem; }
+  .ticket-detail-list > div { min-height: 3.1rem; }
+  .ticket-detail-list dt { gap: 0.45rem; font-size: 0.76rem; }
+  .ticket-detail-list dd { font-size: 0.82rem; }
+  .confirm-next-button { min-height: 3.15rem; margin-top: 0.65rem; }
 }

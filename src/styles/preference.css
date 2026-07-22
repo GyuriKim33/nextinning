@@ -186,19 +186,39 @@
   box-shadow: 0 8px 18px rgba(131, 15, 33, 0.18);
 }
 
+.option-visual--wiz:has(img),
+.option-visual--giants:has(img) {
+  overflow: visible;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.option-visual--wiz img,
+.option-visual--giants img {
+  display: block;
+  width: 7rem;
+  max-width: none;
+  height: auto;
+  object-fit: contain;
+}
+
 .option-visual--solo,
 .option-visual--friends,
 .option-visual--family {
   color: #426587;
-  font-size: 1rem;
-  letter-spacing: -0.12em;
+  font-size: 2rem;
+  letter-spacing: normal;
 }
 
 .option-visual--couple {
   color: #ee6980;
   font-size: 2rem;
-  background: #fff1f4;
+  background: #ffe0e8;
 }
+
+.option-visual--friends { background: #e8f7dc; }
+.option-visual--family { background: #fff3c7; }
 
 .option-visual--time,
 .option-visual--time-blue {
@@ -212,6 +232,41 @@
 .option-visual--time-blue { color: var(--color-blue); }
 .option-visual--sun { color: #f39a08; font-size: 2.4rem; background: #fff8e9; }
 .option-visual--night { color: #9557ed; font-size: 2.5rem; background: #f6efff; }
+
+.option-grid--step-3 .option-visual:is(.option-visual--time, .option-visual--time-blue) {
+  position: relative;
+  color: var(--color-grass);
+  font-size: 0;
+  border: 2px solid currentColor;
+  background: transparent;
+}
+
+.option-grid--step-3 .option-visual:is(.option-visual--time, .option-visual--time-blue)::before {
+  position: absolute;
+  top: 0.75rem;
+  left: 50%;
+  width: 2px;
+  height: 1.05rem;
+  content: '';
+  border-radius: 999px;
+  background: currentColor;
+  transform: translateX(-50%);
+}
+
+.option-grid--step-3 .option-visual:is(.option-visual--time, .option-visual--time-blue)::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0.85rem;
+  height: 2px;
+  content: '';
+  border-radius: 999px;
+  background: currentColor;
+}
+
+.option-grid--step-3 .option-visual--time-blue { color: var(--color-blue); }
+.option-grid--step-3 .option-visual--sun { color: #f39a08; }
+.option-grid--step-3 .option-visual--night { color: #9557ed; }
 
 .preference-option strong {
   font-size: 1rem;
@@ -252,7 +307,8 @@
 
 .option-grid--step-1 .preference-option {
   display: grid;
-  grid-template-columns: 5rem 1fr;
+  grid-template-columns: 7rem minmax(0, 1fr);
+  column-gap: 0.75rem;
   min-height: 8.5rem;
   text-align: left;
 }
@@ -334,4 +390,54 @@
   .confirm-next-button,
   .preference-next-button,
   .preference-option { transition: none; }
+}
+
+/* Compact viewport layout */
+.preference-shell { min-height: 100dvh; }
+
+.preference-page {
+  height: 100dvh;
+  min-height: 100dvh;
+  max-height: 100dvh;
+  padding: 0 1.5rem 1rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.preference-header { flex: 0 0 auto; min-height: 4rem; }
+.question-panel { min-height: 0; }
+.question-heading { padding: 0.65rem 0 1.2rem; }
+.question-heading h1 { margin-top: 0.35rem; font-size: clamp(1.45rem, 6.2vw, 1.75rem); line-height: 1.28; }
+.question-heading p { margin-top: 0.45rem; font-size: 0.8rem; }
+.option-grid { gap: 0.65rem; }
+.preference-option { min-height: 8.35rem; padding: 0.75rem; }
+.option-visual { width: 3.75rem; height: 3.75rem; margin-bottom: 0.55rem; }
+.option-grid--step-1 { gap: 0.65rem; }
+.option-grid--step-1 .preference-option { min-height: 6.6rem; }
+.option-grid--step-1 .option-visual { width: 3.75rem; height: 3.75rem; }
+.preference-next-button { flex: 0 0 auto; min-height: 3.4rem; margin-top: 0.9rem; }
+
+@media (min-width: 600px) {
+  .preference-shell { padding-block: 1rem; }
+  .preference-page {
+    height: calc(100dvh - 2rem);
+    min-height: 0;
+    max-height: calc(100dvh - 2rem);
+  }
+}
+
+@media (max-height: 760px) {
+  .preference-page { padding-bottom: 0.65rem; }
+  .preference-header { min-height: 3.5rem; }
+  .question-heading { padding: 0.35rem 0 0.8rem; }
+  .question-heading h1 { margin-top: 0.25rem; font-size: 1.3rem; }
+  .question-heading p { margin-top: 0.3rem; font-size: 0.75rem; }
+  .option-grid { gap: 0.5rem; }
+  .preference-option { min-height: 7.25rem; padding: 0.55rem; }
+  .option-visual { width: 3.2rem; height: 3.2rem; margin-bottom: 0.35rem; }
+  .option-grid--step-1 .preference-option { min-height: 5.75rem; }
+  .option-grid--step-1 .option-visual { width: 3.2rem; height: 3.2rem; }
+  .preference-option strong { font-size: 0.9rem; }
+  .preference-option small { margin-top: 0.25rem; font-size: 0.67rem; }
+  .preference-next-button { min-height: 3.15rem; margin-top: 0.65rem; }
 }
