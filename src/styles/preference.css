@@ -264,7 +264,8 @@
   background: currentColor;
 }
 
-.option-grid--step-3 .option-visual--time-blue { color: var(--color-blue); }
+.option-grid--step-3 .option-visual.option-visual--time-blue { color: var(--color-blue); }
+.option-grid--step-3 .preference-option.is-selected .option-visual--time-blue { color: var(--color-blue); }
 .option-grid--step-3 .option-visual--sun { color: #f39a08; }
 .option-grid--step-3 .option-visual--night { color: #9557ed; }
 

@@ -2,6 +2,8 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import OptionCard from '../components/recommendation/OptionCard'
 import RouteStep from '../components/recommendation/RouteStep'
+import ktWizLogo from '../assets/images/ktwiz.png'
+import lotteLogo from '../assets/images/lotte.png'
 import '../styles/result.css'
 
 const localOptions = [
@@ -32,25 +34,44 @@ function ResultPage() {
       <main className="result-page">
         <section className="result-hero">
           <button className="result-back" type="button" aria-label="뒤로가기" onClick={() => navigate(-1)}>←</button>
-          <div className="pass-celebration" aria-hidden="true"><span>★</span><i /><i /><i /></div>
-          <p className="result-kicker">오늘의 수원 PASS가 발급됐어요</p>
-          <h1>원정 커플의 주말 나들이 PASS</h1>
-          <p className="result-description">
-            롯데를 응원하기 위해 수원까지 찾아온 두 분께,<br />
-            직관부터 행궁동 데이트까지 완벽한 코스를 준비했어요.
-          </p>
-          <div className="result-tags" aria-label="선택 조건">
-            <span>⚾ 롯데 자이언츠 응원</span>
-            <span>♥ 연인과 함께</span>
-            <span>☀ 주말 낮 경기</span>
-            <span>◷ 2~3시간 여유</span>
+          <div className="result-confetti" aria-hidden="true">
+            <i /><i /><i /><i /><i /><i /><i /><i />
           </div>
+          <h1><strong>짜릿한 역전승!</strong></h1>
+          <p className="result-description">
+            부산에서 수원까지 응원 와주셔서 감사합니다.<br />
+            이 기분, 야구장에서 끝내기엔 아쉽지 않나요?<br />
+            승리의 기운을 안고 수원의 다음 이닝을 시작해보세요!
+          </p>
+
+          <article className="victory-pass" aria-label="원정 커플의 주말 나들이 VICTORY PASS">
+            <div className="victory-pass__identity">
+              <p>TODAY'S NEXT INNING</p>
+              <h2>VICTORY<br />PASS</h2>
+              <strong>원정 커플의 주말 나들이</strong>
+              <span>NEXT INNING</span>
+            </div>
+            <div className="victory-pass__result">
+              <span className="victory-pass__badge">경기 결과</span>
+              <div className="victory-pass__teams">
+                <div><img src={ktWizLogo} alt="KT WIZ" /><small>KT WIZ</small></div>
+                <b>VS</b>
+                <div><img src={lotteLogo} alt="LOTTE GIANTS" /><small>LOTTE</small></div>
+              </div>
+              <div className="victory-pass__score" aria-label="KT 4 대 롯데 5">
+                <strong>4</strong><span>:</span><strong className="is-winner">5</strong>
+              </div>
+              <div className="victory-pass__result-tags"><span>짜릿한 역전승!</span><span>한 점 차 승리!</span></div>
+              <p>승리의 기운을 안고<br />수원의 <em>다음 이닝</em>을 시작해보세요!</p>
+            </div>
+          </article>
         </section>
 
         <section className="route-card" aria-labelledby="route-title">
           <div className="route-card-heading">
-            <p>RECOMMENDED ROUTE</p>
-            <h2 id="route-title">오늘의 추천 코스</h2>
+            <p>추천</p>
+            <h2 id="route-title">승리의 기운을 이어가세요!</h2>
+            <span>오늘의 승리를 수원의 소비와 체험,<br />야경으로 오래 기억해보세요.</span>
           </div>
 
           <div className="route-timeline">

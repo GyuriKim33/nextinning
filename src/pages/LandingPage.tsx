@@ -41,7 +41,7 @@ function LandingPage() {
             <div className="app-feature-copy">
               <div className="app-feature-label"><b>기능 1</b></div>
               <h2>경기 전후 맞춤 로컬 코스</h2>
-              <p>경기 일정, 응원팀, 동행, 머무는 시간을 기반으로<br />오늘의 수원 코스를 추천해드립니다.</p>
+              <p>경기 시간, 응원팀, 동행, 머무는 시간을 기반으로<br />오늘의 수원 코스를 추천해드립니다.</p>
             </div>
 
             <div className="mini-route-map mini-route-map--ticket">
@@ -56,8 +56,8 @@ function LandingPage() {
           <article className="app-feature-card app-feature-card--package">
             <div className="app-feature-copy">
               <div className="app-feature-label"><b>기능 2</b></div>
-              <h2>직관 기억 굿즈 공방</h2>
-              <p>행궁동 공방 체험 패키지를 미리 예약하고<br />특별한 직관 추억을 만들어보세요.</p>
+              <h2>직관 기억 굿즈 만들기</h2>
+              <p>행궁동 공방에서 나만의 직관 굿즈를 만들고,<br />오늘의 경기를 특별한 추억으로 남겨보세요.</p>
             </div>
 
             <div className="mini-route-map mini-route-map--ticket">
