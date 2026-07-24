@@ -291,7 +291,16 @@
   text-align: center;
 }
 
-.confirm-mvp-notice + .confirm-next-button {
+.confirm-flow-footer {
+  position: relative;
+  z-index: 3;
+  flex: 0 0 auto;
+  padding-top: 0.15rem;
+  padding-bottom: env(safe-area-inset-bottom);
+  background: var(--color-white);
+}
+
+.confirm-flow-footer .confirm-next-button {
   margin-top: 0.35rem;
 }
 
@@ -327,7 +336,7 @@
 }
 
 .confirm-header { min-height: 4rem; }
-.confirm-content { min-height: 0; padding-top: 0.35rem; }
+.confirm-content { min-height: 0; padding-top: 0.35rem; overflow-y: auto; }
 .confirm-check { width: 2.35rem; height: 2.35rem; margin-bottom: 0.6rem; font-size: 1.05rem; }
 .confirm-heading h1 { font-size: clamp(1.3rem, 5.7vw, 1.55rem); }
 .confirm-heading p { margin: 0.45rem 0 1rem; font-size: 0.84rem; }
