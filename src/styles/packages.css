@@ -251,7 +251,9 @@
   line-height: 1.55;
   white-space: nowrap;
 }
-.packages-footnote span { display: grid; width: 0.9rem; height: 0.9rem; flex: 0 0 auto; margin-top: 0.05rem; color: #9db3cc; font-size: 0.48rem; font-weight: 800; border: 1px solid currentColor; border-radius: 50%; place-items: center; }
+.packages-footnote-icon { display: grid; width: 0.9rem; height: 0.9rem; flex: 0 0 auto; margin-top: 0.05rem; color: #9db3cc; font-size: 0.48rem; font-weight: 800; border: 1px solid currentColor; border-radius: 50%; place-items: center; }
+.packages-footnote-copy { display: flex; align-items: center; flex-direction: column; }
+.packages-footnote-copy em { margin-top: 0.2rem; font-size: 0.62rem; font-style: italic; }
 
 @media (min-width: 600px) {
   .packages-shell { padding-block: 2rem; }

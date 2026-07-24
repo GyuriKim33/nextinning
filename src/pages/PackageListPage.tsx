@@ -71,8 +71,11 @@ function PackageListPage() {
         </section>
 
         <p className="packages-footnote">
-          <span aria-hidden="true">i</span>
-          선택 후 예약 확정 단계에서 시간과 세부 내용을 확인할 수 있어요.
+          <span className="packages-footnote-icon" aria-hidden="true">i</span>
+          <span className="packages-footnote-copy">
+            선택 후 예약 확정 단계에서 시간과 세부 내용을 확인할 수 있어요.
+            <em>(MVP에서는 미지원)</em>
+          </span>
         </p>
       </main>
     </div>

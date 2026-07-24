@@ -102,6 +102,7 @@ function ResultPage() {
                       <OptionCard key={option.value} {...option} selected={selectedLocalOption === option.value} onSelect={() => setSelectedLocalOption(option.value)} />
                     ))}
                   </div>
+                  <p className="route-option-mvp-note"><strong>선택한 옵션에 맞는 상세 상호를 추천해 드립니다.</strong> <em>(MVP에서는 미지원)</em></p>
                 </div>
                 <div className="journey-walk"><span aria-hidden="true">🚶</span><strong>약 10분 도보</strong><i /></div>
               </div>
@@ -121,13 +122,14 @@ function ResultPage() {
                       <OptionCard key={option.value} {...option} selected={selectedWorkshopOption === option.value} onSelect={() => setSelectedWorkshopOption(option.value)} />
                     ))}
                   </div>
+                  <p className="route-option-mvp-note"><strong>선택한 옵션에 맞는 상세 상호를 추천해 드립니다.</strong> <em>(MVP에서는 미지원)</em></p>
                 </div>
               </div>
             </article>
           </div>
 
           <div className="route-summary">
-            <div><span className="summary-icon">◷</span><p><small>총 소요시간(예상)</small><strong>3시간 20분</strong></p></div>
+            <div><span className="summary-icon">◷</span><p><small>총 소요시간(예상)</small><strong>2시간 50분</strong></p></div>
             <div><span className="summary-icon summary-icon--wallet">▭</span><p><small>예상 비용</small><strong>52,000원</strong></p></div>
           </div>
         </section>

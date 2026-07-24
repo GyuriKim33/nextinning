@@ -297,3 +297,13 @@
     top: 5.4rem;
   }
 }
+
+@media (max-width: 599px) {
+  .app-feature-card--course {
+    padding-top: 0.55rem;
+  }
+
+  .app-feature-card--course .app-feature-copy {
+    align-self: start;
+  }
+}

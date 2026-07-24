@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap');
+
 .result-shell {
   min-height: 100svh;
   background: #04172f;
@@ -118,7 +120,7 @@
 
 .result-hero h1 strong {
   color: #79df2c;
-  font-family: "Nanum Brush Script", "Gungsuh", "궁서", "AppleMyungjo", serif;
+  font-family: "Nanum Brush Script", "Apple Chancery", "Segoe Print", cursive;
   font-size: 1.16em;
   font-style: normal;
   font-weight: 900;
@@ -517,6 +519,17 @@
 }
 
 .journey-content .route-option-box > p { color: #7041b2; }
+
+.journey-content .route-option-box > .route-option-mvp-note {
+  margin: 0.65rem 0 0;
+  color: #7541b6;
+  font-size: 0.56rem;
+  line-height: 1.45;
+  text-align: center;
+}
+
+.route-option-mvp-note strong { font-weight: 800; }
+.route-option-mvp-note em { font-style: italic; font-weight: 500; }
 
 .route-options.destination-options {
   grid-template-columns: repeat(4, minmax(0, 1fr));
