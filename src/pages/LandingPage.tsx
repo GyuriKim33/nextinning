@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import heroBackground from '../assets/images/bg.png'
 import featureCourseImage from '../assets/images/ft2.png'
 import featurePackageImage from '../assets/images/real2.png'
@@ -7,6 +7,8 @@ import '../styles/landing-mobile.css'
 import '../styles/landing-compact.css'
 
 function LandingPage() {
+  const navigate = useNavigate()
+
   return (
     <div className="landing-app-shell">
       <main className="landing-app">
@@ -72,7 +74,7 @@ function LandingPage() {
 
         <nav className="app-bottom-nav" aria-label="하단 메뉴">
           <button type="button"><span className="nav-icon nav-icon--route" aria-hidden="true">⌑</span><small>오늘의 코스</small></button>
-          <button type="button"><span className="nav-icon nav-icon--ticket" aria-hidden="true">▱</span><small>티켓 등록</small></button>
+          <button type="button" onClick={() => navigate('/ticket/upload')}><span className="nav-icon nav-icon--ticket" aria-hidden="true">▱</span><small>티켓 등록</small></button>
           <button type="button"><span className="nav-icon nav-icon--heart" aria-hidden="true">♡</span><small>저장한 PASS</small></button>
           <button type="button"><span className="nav-icon nav-icon--profile" aria-hidden="true">○</span><small>내 정보</small></button>
         </nav>

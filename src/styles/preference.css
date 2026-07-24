@@ -340,6 +340,19 @@
   transition: transform 160ms ease, box-shadow 160ms ease;
 }
 
+.preference-mvp-notice {
+  flex: 0 0 auto;
+  margin: 0.5rem 1rem 0;
+  color: #d98282;
+  font-size: 0.56rem;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.preference-mvp-notice + .preference-next-button {
+  margin-top: 0.35rem;
+}
+
 .preference-next-button:not(:disabled):hover {
   transform: translateY(-2px);
   box-shadow: 0 17px 30px rgba(11, 42, 85, 0.3);

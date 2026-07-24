@@ -59,6 +59,10 @@ function TicketConfirmPage() {
           </article>
         </div>
 
+        <p className="confirm-mvp-notice">
+          ※ 현재는 MVP 시연 버전으로, 선택한 조건과 관계없이 동일한 추천 코스가 제공됩니다.
+        </p>
+
         <button className="confirm-next-button" type="button" onClick={() => navigate('/preferences')}>
           다음
         </button>
