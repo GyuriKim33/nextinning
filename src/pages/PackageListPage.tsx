@@ -7,7 +7,7 @@ const packages: PackageItem[] = [
   {
     number: 1,
     tone: 'green',
-    price: '39,990원~',
+    price: '49,900원',
     title: '응원 굿즈 패키지',
     titleIcon: '⚾',
     description: <>행궁동 공방에서 우리 팀 굿즈를 만들고, 영화동 맛집에서 승리의 기쁨을 나눠요!</>,
@@ -31,7 +31,7 @@ const packages: PackageItem[] = [
   {
     number: 2,
     tone: 'purple',
-    price: '39,000원~',
+    price: '49,900원',
     title: '직관 기억 패키지',
     titleIcon: '🏺',
     description: <>오늘의 경기 날짜와 응원 문구를 담은 도자기를 만들고,<br />조원동 감성 카페에서 여유를 즐겨요!</>,
@@ -63,7 +63,7 @@ function PackageListPage() {
         <header className="packages-header">
           <button type="button" aria-label="뒤로가기" onClick={() => navigate(-1)}>←</button>
           <h1><span>행궁동</span> 공방 패키지</h1>
-          <p>경기 후 행궁동 공방 체험과<br />인근 맛집·카페를 함께 즐겨보세요!</p>
+          <p>경기 후 행궁동 공방 체험과 인근 맛집·카페를 함께 즐겨보세요!</p>
         </header>
 
         <section className="package-list" aria-label="행궁동 지역 연계 패키지">

@@ -57,8 +57,9 @@
 .packages-header > p {
   margin: 0.8rem 0 0;
   color: rgba(255, 255, 255, 0.76);
-  font-size: 0.82rem;
+  font-size: clamp(0.62rem, 2.6vw, 0.72rem);
   line-height: 1.65;
+  white-space: nowrap;
 }
 
 .package-list {
@@ -107,7 +108,7 @@
 .package-card-header h2 {
   margin: 0.55rem 0 0;
   color: var(--color-navy);
-  font-size: 1.34rem;
+  font-size: 1.48rem;
   font-weight: 900;
   line-height: 1.25;
   letter-spacing: -0.045em;

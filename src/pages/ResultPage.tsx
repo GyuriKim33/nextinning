@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import OptionCard from '../components/recommendation/OptionCard'
-import RouteStep from '../components/recommendation/RouteStep'
 import ktWizLogo from '../assets/images/ktwiz.png'
 import lotteLogo from '../assets/images/lotte.png'
 import '../styles/result.css'
@@ -13,9 +12,10 @@ const localOptions = [
 ] as const
 
 const workshopOptions = [
-  { value: 'keyring', icon: '🔑', title: '키링 만들기', description: '오늘의 직관을 담은 기념 키링' },
-  { value: 'perfume', icon: '🌸', title: '향수 만들기', description: '우리만의 향으로 추억 남기기' },
-  { value: 'pottery', icon: '🏺', title: '도자기 체험', description: '직접 빚고 꾸미는 나만의 작품' },
+  { value: 'keyring', icon: '🎨', title: '공방 체험', description: '나만의 굿즈 만들기' },
+  { value: 'cafe', icon: '☕', title: '행궁동\n카페·맛집', description: '감성 공간에서 힐링' },
+  { value: 'night', icon: '🌙', title: '방화수류정\n야경 산책', description: '수원만의 야경 즐기기' },
+  { value: 'photo', icon: '📷', title: '수원화성\n포토스팟', description: '성곽에서 인생샷' },
 ] as const
 
 function ResultPage() {
@@ -53,9 +53,9 @@ function ResultPage() {
             <div className="victory-pass__result">
               <span className="victory-pass__badge">경기 결과</span>
               <div className="victory-pass__teams">
-                <div><img src={ktWizLogo} alt="KT WIZ" /><small>KT WIZ</small></div>
+                <div><img src={ktWizLogo} alt="KT WIZ" /></div>
                 <b>VS</b>
-                <div><img src={lotteLogo} alt="LOTTE GIANTS" /><small>LOTTE</small></div>
+                <div><img src={lotteLogo} alt="LOTTE GIANTS" /></div>
               </div>
               <div className="victory-pass__score" aria-label="KT 4 대 롯데 5">
                 <strong>4</strong><span>:</span><strong className="is-winner">5</strong>
@@ -67,44 +67,63 @@ function ResultPage() {
 
         <section className="route-card" aria-labelledby="route-title">
           <div className="route-card-heading">
-            <p>추천</p>
-            <h2 id="route-title">승리의 기운을 이어가세요!</h2>
-            <span>오늘의 승리를 수원의 소비와 체험,<br />야경으로 오래 기억해보세요.</span>
+            <div>
+              <h2 id="route-title">승리의 기운을 이어가세요!</h2>
+            </div>
+            <button className={`route-save-button ${isSaved ? 'is-saved' : ''}`} type="button" onClick={savePass} aria-label="PASS 저장">
+              {isSaved ? '✓' : '♡'}<small>{isSaved ? '저장됨' : '저장'}</small>
+            </button>
           </div>
 
-          <div className="route-timeline">
-            <RouteStep number={1} time="14:00~17:00" title="KT위즈파크 도착 & 경기 관람" description="주말 낮 경기! 신나게 응원해요." visual="stadium">
-              <span className="game-time-badge">경기 시간 14:00~17:00</span>
-            </RouteStep>
-
-            <RouteStep number={2} time="17:10" title="조원동·영화동에서 중간 소비" description={<>위즈파크에서 도보 10~15분 거리!<br />구도심의 맛집과 즐길 거리를 만나보세요.</>} visual="old-town" featured>
-              <div className="route-option-box route-option-box--local">
-                <p>원하는 코스를 선택해보세요! <span>(하나 선택)</span></p>
-                <div className="route-options" role="radiogroup" aria-label="중간 소비 코스 선택">
-                  {localOptions.map((option) => (
-                    <OptionCard key={option.value} {...option} selected={selectedLocalOption === option.value} onSelect={() => setSelectedLocalOption(option.value)} />
-                  ))}
+          <div className="journey-timeline">
+            <article className="journey-step">
+              <div className="journey-marker"><b>1</b><span>출발</span></div>
+              <div className="journey-content journey-content--start">
+                <div className="journey-copy">
+                  <h3><mark>KT위즈파크</mark>에서 출발</h3>
+                  <p>승리의 여운을 안고,<br />수원의 다음 이닝을 시작해보세요.</p>
                 </div>
-                <div className="walking-info"><span aria-hidden="true">♟</span> 위즈파크 → 조원동·영화동 도보 10분</div>
+                <div className="journey-stadium" aria-label="KT위즈파크 경기장 일러스트"><i /><i /><strong>KT WIZ</strong></div>
+                <div className="journey-walk"><span aria-hidden="true">🚶</span><strong>약 10분 도보</strong><i /></div>
               </div>
-            </RouteStep>
+            </article>
 
-            <RouteStep number={3} time="18:30" title="행궁동으로 이동" description={<>구도심을 지나 행궁동으로!<br />도보 10~12분 소요</>} visual="walk">
-              <div className="inline-route-info"><span aria-hidden="true">♟</span> 조원동·영화동 → 행궁동 도보 10~12분</div>
-            </RouteStep>
+            <article className="journey-step">
+              <div className="journey-marker"><b>2</b></div>
+              <div className="journey-content">
+                <div className="journey-copy">
+                  <h3><mark>조원동·영화동</mark>에서 소비하기</h3>
+                  <p>위즈파크 근처 맛집과 즐길 거리를 만나보세요.</p>
+                </div>
+                <div className="route-option-box route-option-box--local">
+                  <p>원하는 코스를 선택해보세요! <span>(하나 선택)</span></p>
+                  <div className="route-options" role="radiogroup" aria-label="중간 소비 코스 선택">
+                    {localOptions.map((option) => (
+                      <OptionCard key={option.value} {...option} selected={selectedLocalOption === option.value} onSelect={() => setSelectedLocalOption(option.value)} />
+                    ))}
+                  </div>
+                </div>
+                <div className="journey-walk"><span aria-hidden="true">🚶</span><strong>약 10분 도보</strong><i /></div>
+              </div>
+            </article>
 
-            <RouteStep number={4} time="18:45" title="행궁동 공방 & 데이트" description="직접 만드는 굿즈로 오늘의 직관을 추억하세요." visual="workshop">
-              <div className="route-option-box route-option-box--workshop">
-                <p>원하는 체험을 선택해보세요! <span>(하나 선택)</span></p>
-                <div className="route-options" role="radiogroup" aria-label="공방 체험 선택">
-                  {workshopOptions.map((option) => (
-                    <OptionCard key={option.value} {...option} selected={selectedWorkshopOption === option.value} onSelect={() => setSelectedWorkshopOption(option.value)} accent="purple" />
-                  ))}
+            <article className="journey-step journey-step--last">
+              <div className="journey-marker"><b>3</b></div>
+              <div className="journey-content">
+                <div className="journey-copy">
+                  <h3><mark>행궁동</mark>에서 즐기기</h3>
+                  <p className="journey-copy-single-line">수원의 명소와 감성 공간을 마음껏 즐겨보세요.</p>
+                </div>
+                <div className="route-option-box route-option-box--destination">
+                  <p>원하는 코스를 선택해보세요! <span>(하나 선택)</span></p>
+                  <div className="route-options destination-options" role="radiogroup" aria-label="행궁동 코스 선택">
+                    {workshopOptions.map((option) => (
+                      <OptionCard key={option.value} {...option} selected={selectedWorkshopOption === option.value} onSelect={() => setSelectedWorkshopOption(option.value)} />
+                    ))}
+                  </div>
                 </div>
               </div>
-            </RouteStep>
-
-            <RouteStep number={5} time="20:15" title="방화수류정 야경 산책" description={<>수원의 아름다운 야경으로<br />오늘의 데이트를 마무리하세요.</>} visual="night" last />
+            </article>
           </div>
 
           <div className="route-summary">
@@ -114,9 +133,8 @@ function ResultPage() {
         </section>
 
         <div className="result-actions">
-          <button className="result-action result-action--map" type="button" onClick={() => window.alert('지도 기능은 준비 중입니다.')}><span>◇</span>전체 코스 지도 보기</button>
-          <button className="result-action result-action--package" type="button" onClick={() => navigate('/packages')}><span>♙</span>공방 패키지 예약하기</button>
-          <button className={`result-action result-action--save ${isSaved ? 'is-saved' : ''}`} type="button" onClick={savePass}><span>{isSaved ? '✓' : '▱'}</span>{isSaved ? '저장 완료' : 'PASS 저장하기'}</button>
+          <button className="result-action result-action--map" type="button" onClick={() => window.alert('지도 기능은 준비 중입니다.')}><span>⌖</span>지도로 코스 한눈에 보기</button>
+          <button className="result-action result-action--package" type="button" onClick={() => navigate('/packages')}><span>▣</span>이 코스로 패키지 예약하기</button>
         </div>
       </main>
     </div>
